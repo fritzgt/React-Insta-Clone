@@ -1,9 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./CommentSection.css";
 
 const CommentSection = props => {
   return (
-    <div>
+    <div className="comment-secction">
+      <i className="far fa-lg fa-heart" />
+      <i className="far fa-lg fa-comment" />
+      <p>345 likes</p>
       {props.CommentArr.map(comment => (
         <div>
           <p>
@@ -12,7 +16,7 @@ const CommentSection = props => {
           </p>
         </div>
       ))}
-      <input placeholder="Add a comment..." />
+      <input placeholder="Add a comment..." className="form-control" />
     </div>
   );
 };

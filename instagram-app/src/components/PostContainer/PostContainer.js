@@ -5,10 +5,10 @@ import "./PostContainer.css";
 
 const PostContainer = props => {
   return (
-    <div className="constainer">
+    <div className="main-cont">
       {props.PropsDummyData.map(event => (
-        <div className="">
-          <div lassName="d-inline-flex">
+        <div className="container">
+          <div className="d-flex user-sec">
             <img
               src={event.thumbnailUrl}
               alt={event.username}
