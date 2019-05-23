@@ -3,11 +3,12 @@ import "./SearchBar.css";
 
 const SearchBar = () => {
   return (
-    <nav>
-      <p>Hello</p>
+    <nav className="navbar navbar-light bg-light">
+      <a className="navbar-brand" href="#">
+        <i className="fab fa-lg fa-instagram" />
+        <span className="brand">Instagram</span>
+      </a>
       <input placeholder="Search" />
-      <p>Hello</p>
-      <p>Hello</p>
     </nav>
   );
 };

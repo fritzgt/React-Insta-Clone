@@ -22,7 +22,7 @@ PostContainer.propTypes = {
     thumbnailUrl: PropTypes.string,
     username: PropTypes.string,
     imageUrl: PropTypes.string,
-    comments: PropTypes.arrayOf(PropTypes.number)
+    comments: PropTypes.arrayOf(PropTypes.string)
   })
 };
 

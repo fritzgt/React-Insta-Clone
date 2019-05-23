@@ -1,6 +1,5 @@
-nav {
-    display: flex;
-    justify-content: space-around;
-    text-decoration: none;
-    padding: 20px;
+.brand {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid gray
 }
