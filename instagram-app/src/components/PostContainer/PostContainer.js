@@ -1,5 +1,5 @@
 import React from "react";
-import { EVENTS } from "saxes";
+import CommentSection from "../CommentSection/CommentSection";
 
 const PostContainer = props => {
   return (
@@ -9,6 +9,7 @@ const PostContainer = props => {
           <img src={event.thumbnailUrl} />
           <h1>{event.username}</h1>
           <img src={event.imageUrl} />
+          <CommentSection CommentArr={event.comments} />
         </div>
       ))}
     </div>
