@@ -5,10 +5,13 @@ const CommentSection = props => {
     <div>
       {props.CommentArr.map(comment => (
         <div>
-          <h4>{comment.username}</h4>
-          <p>{comment.text}</p>
+          <p>
+            <strong>{comment.username} </strong>
+            {comment.text}
+          </p>
         </div>
       ))}
+      <input placeholder="Add a comment..." />
     </div>
   );
 };
