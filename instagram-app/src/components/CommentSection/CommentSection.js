@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const CommentSection = props => {
   return (
@@ -14,6 +15,13 @@ const CommentSection = props => {
       <input placeholder="Add a comment..." />
     </div>
   );
+};
+
+CommentSection.propTypes = {
+  Comment: PropTypes.shape({
+    username: PropTypes.string,
+    text: PropTypes.string
+  })
 };
 
 export default CommentSection;
