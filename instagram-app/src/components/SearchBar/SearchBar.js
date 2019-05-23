@@ -9,6 +9,11 @@ const SearchBar = () => {
         <span className="brand">Instagram</span>
       </a>
       <input placeholder="Search" />
+      <div className="right-sect-nav">
+        <i class="far fa-lg fa-compass" />
+        <i class="far fa-lg fa-heart" />
+        <i class="fas fa-lg fa-user-alt" />
+      </div>
     </nav>
   );
 };
