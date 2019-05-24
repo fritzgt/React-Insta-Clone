@@ -8,7 +8,9 @@ const SearchBar = () => {
         <i className="fab fa-lg fa-instagram" />
         <span className="brand"> Instagram </span>{" "}
       </a>
-      <input placeholder="Search" className="col-sm-4 col-form-label " />
+      <form>
+        <input placeholder="Search" className="col-form-label " />
+      </form>
       <div className="right-sect-nav d-flex">
         <i className="far fa-lg fa-compass" />
         <i className="far fa-lg fa-heart" />

@@ -16,7 +16,9 @@ const CommentSection = props => {
           </p>
         </div>
       ))}
-      <input placeholder="Add a comment..." className="form-control" />
+      <form>
+        <input placeholder="Add a comment..." className="form-control" />
+      </form>
     </div>
   );
 };
