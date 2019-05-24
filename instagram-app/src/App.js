@@ -24,7 +24,7 @@ class App extends React.Component {
         <header>
           <SearchBar />
         </header>
-        <PostContainer PropsDummyData={this.state.dummyData} />
+        <PostContainer propsDummyData={this.state.dummyData} />
       </div>
     );
   }

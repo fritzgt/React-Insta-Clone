@@ -6,7 +6,7 @@ import "./PostContainer.css";
 const PostContainer = props => {
   return (
     <div className="main-cont">
-      {props.PropsDummyData.map(event => (
+      {props.propsDummyData.map(event => (
         <div className="container" key={event.thumbnailUrl}>
           <div className="d-flex user-sec">
             <img
@@ -21,7 +21,12 @@ const PostContainer = props => {
             alt={event.username}
             className="img-fluid"
           />
-          <CommentSection CommentArr={event.comments} />
+          <div className="like-sec">
+            <i className="far fa-lg fa-heart" />
+            <i className="far fa-lg fa-comment" />
+            <p>{event.likes} likes</p>
+          </div>
+          <CommentSection commentArr={event.comments} />
         </div>
       ))}
     </div>
@@ -29,12 +34,15 @@ const PostContainer = props => {
 };
 
 PostContainer.propTypes = {
-  postContainer: PropTypes.shape({
-    thumbnailUrl: PropTypes.string,
-    username: PropTypes.string,
-    imageUrl: PropTypes.string,
-    comments: PropTypes.arrayOf(PropTypes.string)
-  })
+  propsDummyData: PropTypes.PropTypes.arrayOf(
+    PropTypes.shape({
+      thumbnailUrl: PropTypes.string,
+      username: PropTypes.string,
+      imageUrl: PropTypes.string,
+      likes: PropTypes.number,
+      comments: PropTypes.arrayOf(PropTypes.object)
+    })
+  )
 };
 
 export default PostContainer;

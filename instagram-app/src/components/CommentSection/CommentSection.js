@@ -5,10 +5,7 @@ import "./CommentSection.css";
 const CommentSection = props => {
   return (
     <div className="comment-secction">
-      <i className="far fa-lg fa-heart" />
-      <i className="far fa-lg fa-comment" />
-      <p>345 likes</p>
-      {props.CommentArr.map(comment => (
+      {props.commentArr.map(comment => (
         <div key={comment.text}>
           <p>
             <strong>{comment.username} </strong>
@@ -24,10 +21,12 @@ const CommentSection = props => {
 };
 
 CommentSection.propTypes = {
-  Comment: PropTypes.shape({
-    username: PropTypes.string,
-    text: PropTypes.string
-  })
+  commentArr: PropTypes.arrayOf(
+    PropTypes.shape({
+      username: PropTypes.string,
+      text: PropTypes.string
+    })
+  )
 };
 
 export default CommentSection;
