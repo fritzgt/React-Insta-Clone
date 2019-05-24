@@ -9,7 +9,7 @@ const CommentSection = props => {
       <i className="far fa-lg fa-comment" />
       <p>345 likes</p>
       {props.CommentArr.map(comment => (
-        <div>
+        <div key={comment.text}>
           <p>
             <strong>{comment.username} </strong>
             {comment.text}

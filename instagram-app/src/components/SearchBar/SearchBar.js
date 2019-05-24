@@ -4,10 +4,10 @@ import "./SearchBar.css";
 const SearchBar = () => {
   return (
     <nav className="navbar navbar-light bg-light flex-nowrap">
-      <a className="navbar-brand" href="#">
+      <div className="navbar-brand" href="#">
         <i className="fab fa-lg fa-instagram" />
         <span className="brand"> Instagram </span>{" "}
-      </a>
+      </div>
       <form>
         <input placeholder="Search" className="col-form-label " />
       </form>

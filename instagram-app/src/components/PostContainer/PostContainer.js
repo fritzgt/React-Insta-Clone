@@ -7,7 +7,7 @@ const PostContainer = props => {
   return (
     <div className="main-cont">
       {props.PropsDummyData.map(event => (
-        <div className="container">
+        <div className="container" key={event.thumbnailUrl}>
           <div className="d-flex user-sec">
             <img
               src={event.thumbnailUrl}
