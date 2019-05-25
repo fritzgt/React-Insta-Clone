@@ -3,16 +3,15 @@ import PropTypes from "prop-types";
 import "./CommentSection.css";
 
 class CommentSection extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
+  state = {
+    comments: this.props.commentArr
+  };
 
   render() {
     return (
       <div className="comment-secction">
         {/* mapping over the comments array */}
-        {this.props.commentArr.map(comment => (
+        {this.state.comments.map(comment => (
           <div key={comment.text}>
             <p>
               <strong>{comment.username} </strong>
@@ -22,7 +21,15 @@ class CommentSection extends React.Component {
         ))}
         {/* input field to add new comment */}
         <form>
-          <input placeholder="Add a comment..." className="form-control" />
+          <input
+            placeholder="Add a comment..."
+            className="form-control"
+            type="text"
+            value={this.state.comment}
+            name="item"
+            onChange={this.addNewComment}
+            required
+          />
         </form>
       </div>
     );
