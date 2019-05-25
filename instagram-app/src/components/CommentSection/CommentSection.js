@@ -4,7 +4,28 @@ import "./CommentSection.css";
 
 class CommentSection extends React.Component {
   state = {
-    comments: this.props.commentArr
+    comments: this.props.commentArr,
+    newComment: " "
+  };
+
+  //Handle change to add value to the name
+  handleChange = event => {
+    console.log("handleChange: " + event.target.value);
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
+  //Passing item to the array
+  addNewComment = e => {
+    e.preventDefault();
+    let comment = {
+      username: "Fritz",
+      text: this.newComment
+    };
+    this.setState({
+      comments: [...this.state.comments, comment]
+    });
   };
 
   render() {
@@ -20,14 +41,14 @@ class CommentSection extends React.Component {
           </div>
         ))}
         {/* input field to add new comment */}
-        <form>
+        <form onSubmit={this.addNewComment}>
           <input
             placeholder="Add a comment..."
             className="form-control"
             type="text"
             value={this.state.comment}
-            name="item"
-            onChange={this.addNewComment}
+            name="comment"
+            onChange={this.handleChange}
             required
           />
         </form>
