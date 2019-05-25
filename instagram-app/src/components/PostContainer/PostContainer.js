@@ -6,6 +6,7 @@ import "./PostContainer.css";
 const PostContainer = props => {
   return (
     <div className="main-cont">
+      {/* mapping over the dummy object */}
       {props.propsDummyData.map(event => (
         <div className="container" key={event.thumbnailUrl}>
           <div className="d-flex user-sec">
@@ -33,6 +34,7 @@ const PostContainer = props => {
   );
 };
 
+// Checking data types
 PostContainer.propTypes = {
   propsDummyData: PropTypes.PropTypes.arrayOf(
     PropTypes.shape({

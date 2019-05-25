@@ -8,13 +8,15 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      dummyData: []
+      dummyData: [],
+      comments: []
     };
   }
 
   componentDidMount() {
     this.setState({
-      dummyData: dummyData
+      dummyData: dummyData,
+      comments: dummyData.comments
     });
   }
 
