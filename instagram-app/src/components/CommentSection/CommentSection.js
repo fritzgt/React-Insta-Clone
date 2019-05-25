@@ -12,7 +12,7 @@ class CommentSection extends React.Component {
   handleChange = event => {
     console.log("handleChange: " + event.target.value);
     this.setState({
-      [event.target.name]: event.target.value
+      newComment: event.target.value
     });
   };
 
@@ -20,8 +20,10 @@ class CommentSection extends React.Component {
   addNewComment = e => {
     e.preventDefault();
     let comment = {
+      // Hardcode user name
       username: "Fritz",
-      text: this.newComment
+      // get message frim state newComment
+      text: this.state.newComment
     };
     this.setState({
       comments: [...this.state.comments, comment]
