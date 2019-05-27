@@ -9,7 +9,7 @@ class App extends React.Component {
     super();
     this.state = {
       dummyData: [],
-      comments: []
+      liked: false
     };
   }
 
@@ -19,13 +19,33 @@ class App extends React.Component {
     });
   }
 
+  incrementLikes = event => {
+    this.setState({
+      dummyData: this.state.dummyData.map(post => {
+        if (event.imageUrl === post.imageUrl && event.liked === post.liked) {
+          // console.log("Selected likes " + post.likes);
+          return {
+            ...post,
+            likes: 1 + post.likes,
+            liked: true
+          };
+        }
+        // console.log("Other likes " + post.likes);
+        return post;
+      })
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <header>
           <SearchBar />
         </header>
-        <PostContainer propsDummyData={this.state.dummyData} />
+        <PostContainer
+          propsDummyData={this.state.dummyData}
+          incrementLikes={this.incrementLikes}
+        />
       </div>
     );
   }

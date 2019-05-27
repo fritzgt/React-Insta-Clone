@@ -23,7 +23,10 @@ const PostContainer = props => {
             className="img-fluid"
           />
           <div className="like-sec">
-            <i className="far fa-lg fa-heart" />
+            <i
+              className="far fa-lg fa-heart"
+              onClick={() => props.incrementLikes(event)}
+            />
             <i className="far fa-lg fa-comment" />
             <p>{event.likes} likes</p>
           </div>
