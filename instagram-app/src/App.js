@@ -8,7 +8,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      dummyData: []
+      dummyData: [],
+      searchTerm: ""
     };
   }
 
@@ -42,11 +43,33 @@ class App extends React.Component {
     });
   };
 
+  handleSearch = term => {
+    // console.log(term.target.value);
+    this.setState({
+      searchTerm: term.target.value
+    });
+  };
+
+  submitSearch = term => {
+    term.preventDefault();
+    let searchTerm = this.state.searchTerm;
+    // console.log(searchTerm);
+    this.setState({
+      dummyData: this.state.dummyData.filter(
+        post => searchTerm === post.username
+      )
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <header>
-          <SearchBar />
+          <SearchBar
+            submitSearch={this.submitSearch}
+            handleSearch={this.handleSearch}
+            searchTerm={this.state.searchTerm}
+          />
         </header>
         <PostContainer
           propsDummyData={this.state.dummyData}

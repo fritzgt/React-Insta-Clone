@@ -1,7 +1,7 @@
 import React from "react";
 import "./SearchBar.css";
 
-const SearchBar = () => {
+const SearchBar = props => {
   return (
     <nav className="navbar navbar-light bg-light flex-nowrap">
       {/* branding container */}
@@ -10,8 +10,16 @@ const SearchBar = () => {
         <span className="brand"> Instagram </span>
       </div>
       {/* input / search fild to filter results */}
-      <form>
-        <input placeholder="Search" className="col-form-label " />
+      <form onSubmit={props.submitSearch}>
+        <input
+          placeholder="Search"
+          className="col-form-label "
+          type="text"
+          value={props.searchTerm}
+          name="searchTerm"
+          onChange={props.handleSearch}
+          required
+        />
       </form>
       {/* likes and loggin icons */}
       <div className="right-sect-nav d-flex">
