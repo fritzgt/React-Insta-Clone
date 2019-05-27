@@ -8,8 +8,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      dummyData: [],
-      liked: false
+      dummyData: []
     };
   }
 
@@ -20,14 +19,21 @@ class App extends React.Component {
   }
 
   incrementLikes = event => {
+    // console.log(event.liked);
     this.setState({
       dummyData: this.state.dummyData.map(post => {
-        if (event.imageUrl === post.imageUrl && event.liked === post.liked) {
+        if (event.imageUrl === post.imageUrl && event.liked === false) {
           // console.log("Selected likes " + post.likes);
           return {
             ...post,
             likes: 1 + post.likes,
             liked: true
+          };
+        } else if (event.imageUrl === post.imageUrl && event.liked === true) {
+          return {
+            ...post,
+            likes: post.likes - 1,
+            liked: false
           };
         }
         // console.log("Other likes " + post.likes);

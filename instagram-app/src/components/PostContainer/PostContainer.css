@@ -28,3 +28,7 @@
 .like-sec i {
     padding-right: 15px;
 }
+
+.liked {
+    color: red
+}

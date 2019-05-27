@@ -24,7 +24,8 @@ const PostContainer = props => {
           />
           <div className="like-sec">
             <i
-              className="far fa-lg fa-heart"
+              // toggle class to show full red heart
+              className={`far fa-lg fa-heart ${event.liked ? "fas liked" : ""}`}
               onClick={() => props.incrementLikes(event)}
             />
             <i className="far fa-lg fa-comment" />
