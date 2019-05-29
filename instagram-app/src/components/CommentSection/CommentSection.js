@@ -12,7 +12,7 @@ class CommentSection extends React.Component {
   addNewComment = () => {
     let comment = {
       // Hardcode user name
-      username: "Fritz",
+      username: localStorage.getItem("user"),
       // get message from state newComment
       text: this.state.newComment
     };
