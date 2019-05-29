@@ -8,7 +8,8 @@ class PostsPage extends React.Component {
     super();
     this.state = {
       dummyData: [],
-      searchTerm: ""
+      searchTerm: "",
+      loggedIn: false
     };
   }
 
@@ -44,7 +45,7 @@ class PostsPage extends React.Component {
 
   //handler for search
   handleSearch = term => {
-    // console.log(term.target.value);
+    console.log(term.target.value);
     this.setState({
       searchTerm: term.target.value
     });
@@ -64,14 +65,15 @@ class PostsPage extends React.Component {
   };
 
   logOut = e => {
-    e.preventDefault();
+    // e.preventDefault();
+    window.location.reload();
     // console.log(e);
     if (localStorage.getItem("user")) {
       localStorage.removeItem("user");
-      this.setState({ isLoggedIn: false });
+      this.setState({ loggedIn: false });
     } else {
       localStorage.setItem("user", "Fritz");
-      this.setState({ isLoggedIn: true });
+      this.setState({ loggedIn: true });
     }
   };
 

@@ -16,8 +16,8 @@ const SearchBar = props => {
           className="form-control"
           type="text"
           value={props.searchTerm}
-          name="searchTerm"
           onChange={props.handleSearch}
+          name="searchTerm"
           required
         />
       </form>
