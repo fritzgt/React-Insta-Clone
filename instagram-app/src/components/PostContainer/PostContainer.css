@@ -1,0 +1,38 @@
+.main-cont {
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.container {
+    padding-top: 60px;
+}
+
+
+.thumbnail {
+    height: 40px;
+    width: auto;
+    border-radius: 40px;
+    margin: 0 10px;
+}
+
+.user-sec {
+    padding: 20px 0;
+}
+
+.like-sec {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.like-sec i {
+    padding-right: 15px;
+}
+
+.liked {
+    color: red
+}
+
+.main-cont i:hover {
+    font-size: 1.5rem;
+}
