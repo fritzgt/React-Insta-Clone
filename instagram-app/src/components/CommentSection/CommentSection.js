@@ -5,7 +5,20 @@ import "./CommentSection.css";
 class CommentSection extends React.Component {
   state = {
     comments: this.props.commentArr,
-    newComment: " "
+    newComment: ""
+  };
+
+  //Passing item to the array
+  addNewComment = () => {
+    let comment = {
+      // Hardcode user name
+      username: "Fritz",
+      // get message from state newComment
+      text: this.state.newComment
+    };
+    this.setState({
+      comments: [...this.state.comments, comment]
+    });
   };
 
   //Handle change to add value to the name
@@ -18,17 +31,12 @@ class CommentSection extends React.Component {
   };
 
   //Passing item to the array
-  addNewComment = e => {
+  submitComment = e => {
     e.preventDefault();
-    let comment = {
-      // Hardcode user name
-      username: "Fritz",
-      // get message from state newComment
-      text: this.state.newComment
-    };
     this.setState({
-      comments: [...this.state.comments, comment]
+      newComment: ""
     });
+    this.addNewComment(this.state.newComment);
   };
 
   render() {
@@ -44,7 +52,7 @@ class CommentSection extends React.Component {
           </div>
         ))}
         {/* input field to add new comment */}
-        <form onSubmit={this.addNewComment}>
+        <form onSubmit={this.submitComment}>
           <input
             placeholder="Add a comment..."
             className="form-control"

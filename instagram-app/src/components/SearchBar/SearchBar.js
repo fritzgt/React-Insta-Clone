@@ -12,8 +12,8 @@ const SearchBar = props => {
       {/* input / search fild to filter results */}
       <form onSubmit={props.submitSearch}>
         <input
-          placeholder="Search"
-          className="col-form-label "
+          placeholder="Search User"
+          className="form-control"
           type="text"
           value={props.searchTerm}
           name="searchTerm"

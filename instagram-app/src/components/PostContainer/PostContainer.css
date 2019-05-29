@@ -32,3 +32,7 @@
 .liked {
     color: red
 }
+
+.main-cont i:hover {
+    font-size: 1.5rem;
+}
