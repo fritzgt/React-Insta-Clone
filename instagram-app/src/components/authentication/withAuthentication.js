@@ -1,9 +1,13 @@
 import React from "react";
 
-const withAuthenticate = App =>
+const withAuthenticate = Login => App =>
   class extends React.Component {
     render() {
-      return <App />;
+      if (localStorage.getItem("user")) {
+        return <App />;
+      } else {
+        return <Login />;
+      }
     }
   };
 

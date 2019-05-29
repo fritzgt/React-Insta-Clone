@@ -63,6 +63,18 @@ class PostsPage extends React.Component {
     });
   };
 
+  logOut = e => {
+    e.preventDefault();
+    // console.log(e);
+    if (localStorage.getItem("user")) {
+      localStorage.removeItem("user");
+      this.setState({ isLoggedIn: false });
+    } else {
+      localStorage.setItem("user", "Fritz");
+      this.setState({ isLoggedIn: true });
+    }
+  };
+
   render() {
     return (
       <div className="App">
@@ -71,6 +83,7 @@ class PostsPage extends React.Component {
             submitSearch={this.submitSearch}
             handleSearch={this.handleSearch}
             searchTerm={this.state.searchTerm}
+            login={this.logOut}
           />
         </header>
         <PostContainer

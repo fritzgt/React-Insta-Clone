@@ -2,26 +2,30 @@ import React from "react";
 import "./Login.css";
 
 class Login extends React.Component {
-  state = {
-    isLoggedIn: false,
-    userName: " "
-  };
-
-  handleChange = e => {
-    console.log(e.taget.value);
-    this.setState({
-      userName: e.taget.value
-    });
-  };
+  constructor() {
+    super();
+    this.state = {
+      isLoggedIn: false,
+      userName: ""
+    };
+  }
+  //     handleChange = e => {
+  //       console.log(e.taget.value);
+  //       this.setState({
+  //         userName: e.taget.value
+  //       });
+  //     };
+  //   }
 
   login = e => {
     e.preventDefault();
+    // console.log(e);
     if (localStorage.getItem("user")) {
       localStorage.removeItem("user");
-      this.setState({ isLogedIn: false });
+      this.setState({ isLoggedIn: false });
     } else {
       localStorage.setItem("user", "Fritz");
-      this.setState({ isLogedIn: true });
+      this.setState({ isLoggedIn: true });
     }
   };
 
@@ -32,8 +36,8 @@ class Login extends React.Component {
           <input
             type="text"
             placeholder="User Name"
-            onChange={this.handleChange}
-            value={this.state.userName}
+            // onChange={this.handleChange}
+            // value={this.state.userName}
             name="userName"
           />
           <input type="password" placeholder="Password" />

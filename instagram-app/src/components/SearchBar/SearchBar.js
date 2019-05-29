@@ -25,7 +25,7 @@ const SearchBar = props => {
       <div className="right-sect-nav d-flex">
         <i className="far fa-lg fa-compass" />
         <i className="far fa-lg fa-heart" />
-        <i className="fas fa-lg fa-user-alt" />
+        <i className="fas fa-lg fa-user-alt" onClick={props.login} />
       </div>{" "}
     </nav>
   );
