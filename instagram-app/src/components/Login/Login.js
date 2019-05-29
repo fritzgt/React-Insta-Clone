@@ -5,15 +5,27 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      loggedIn: false,
-      userName: ""
+      userName: "",
+      password: "",
+      loggedIn: false
     };
   }
 
+  //loggedIn not updating state as expected
+  componentDidMount() {
+    // console.log("loggedIn: " + this.state.loggedIn);
+    // if (localStorage.getItem("user")) {
+    //   this.setState({ loggedIn: true });
+    // } else {
+    //   this.setState({ loggedIn: false });
+    // }
+  }
+
+  //Handle change to add value to the name
   handleChange = e => {
-    console.log(e.taget.value);
+    console.log(e.target.value);
     this.setState({
-      userName: e.taget.value
+      [e.target.name]: e.target.value
     });
   };
 
@@ -22,20 +34,12 @@ class Login extends React.Component {
     // console.log(e);
     if (localStorage.getItem("user")) {
       localStorage.removeItem("user");
+      localStorage.removeItem("password");
     } else {
-      localStorage.setItem("user", "Fritz");
+      localStorage.setItem("user", this.state.userName);
+      localStorage.setItem("password", this.state.password);
     }
   };
-
-  componentDidMount() {
-    console.log("Current state: " + this.state.loggedIn);
-    if (localStorage.getItem("user")) {
-      this.setState({ loggedIn: true });
-    } else {
-      this.setState({ loggedIn: false });
-    }
-    console.log("Latest state: " + this.state.loggedIn);
-  }
 
   render() {
     return (
@@ -45,7 +49,7 @@ class Login extends React.Component {
           <span className="brand"> Instagram </span>
         </div>
 
-        <form>
+        <form onSubmit={this.login}>
           <input
             placeholder="User Name"
             type="text"
@@ -54,8 +58,15 @@ class Login extends React.Component {
             name="userName"
             // required
           />
-          <input type="current-password" placeholder="Password" />
-          <button onClick={this.login}> Login </button>
+          <input
+            type="current-password"
+            placeholder="Password"
+            type="text"
+            value={this.state.password}
+            onChange={this.handleChange}
+            name="password"
+          />
+          <button> Login </button>
         </form>
       </div>
     );

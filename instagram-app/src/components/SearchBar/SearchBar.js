@@ -23,6 +23,9 @@ const SearchBar = props => {
       </form>
       {/* likes and loggin icons */}
       <div className="right-sect-nav d-flex">
+        <span className="greet-user">
+          Welcome {localStorage.getItem("user")}!
+        </span>
         <i className="far fa-lg fa-compass" />
         <i className="far fa-lg fa-heart" />
         <i className="fas fa-lg fa-user-alt" onClick={props.login} />

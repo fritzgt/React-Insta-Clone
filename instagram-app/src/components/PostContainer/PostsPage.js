@@ -13,10 +13,18 @@ class PostsPage extends React.Component {
     };
   }
 
+  //loggedIn not updating state as expected
   componentDidMount() {
     this.setState({
       dummyData: dummyData
     });
+
+    // console.log("loggedIn: " + this.state.loggedIn);
+    // if (localStorage.getItem("user")) {
+    //   this.setState({ loggedIn: true });
+    // } else {
+    //   this.setState({ loggedIn: false });
+    // }
   }
 
   incrementLikes = event => {
@@ -70,10 +78,8 @@ class PostsPage extends React.Component {
     // console.log(e);
     if (localStorage.getItem("user")) {
       localStorage.removeItem("user");
+      localStorage.removeItem("password");
       this.setState({ loggedIn: false });
-    } else {
-      localStorage.setItem("user", "Fritz");
-      this.setState({ loggedIn: true });
     }
   };
 
