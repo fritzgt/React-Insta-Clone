@@ -12,7 +12,7 @@ const SearchBar = props => {
       {/* input / search fild to filter results */}
       <form onSubmit={props.submitSearch}>
         <input
-          placeholder="Search User"
+          placeholder="Search by User Name"
           className="form-control"
           type="text"
           value={props.searchTerm}
@@ -28,7 +28,7 @@ const SearchBar = props => {
         </span>
         <i className="far fa-lg fa-compass" />
         <i className="far fa-lg fa-heart" />
-        <i className="fas fa-lg fa-user-alt" onClick={props.login} />
+        <i className="fas fa-lg fa-sign-out-alt" onClick={props.login} />
       </div>{" "}
     </nav>
   );
