@@ -11,7 +11,6 @@ class CommentSection extends React.Component {
   //Passing item to the array
   addNewComment = () => {
     let comment = {
-      // Hardcode user name
       username: localStorage.getItem("user"),
       // get message from state newComment
       text: this.state.newComment

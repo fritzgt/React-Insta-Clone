@@ -1,9 +1,3 @@
-.brand {
-    margin-left: 10px;
-    padding-left: 10px;
-    border-left: 1px solid gray
-}
-
 .right-sect-nav i {
     padding: 6px 15px;
 
@@ -11,4 +5,8 @@
 
 .greet-user {
     padding: 0 15px;
+
 }
+
+/* 
+className="navbar navbar-light bg-light flex-nowrap" */

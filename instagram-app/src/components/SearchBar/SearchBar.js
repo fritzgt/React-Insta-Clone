@@ -1,13 +1,38 @@
 import React from "react";
-import "./SearchBar.css";
+import styled from "styled-components";
+
+// JS styles
+const NavBar = styled.nav`
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 1.3rem;
+  background-color: whitesmoke;
+`;
+
+const Brand = styled.span`
+  margin-left: 10px;
+  padding-left: 10px;
+  border-left: 1px solid gray;
+`;
+
+const NavItem = styled.div`
+  i {
+    padding: 6px 15px;
+    font-size: 1.3rem;
+  }
+`;
+
+// End of JS styles
 
 const SearchBar = props => {
   return (
-    <nav className="navbar navbar-light bg-light flex-nowrap">
+    <NavBar>
       {/* branding container */}
-      <div className="navbar-brand" href="#">
+      <div>
         <i className="fab fa-lg fa-instagram" />
-        <span className="brand"> Instagram </span>
+        <Brand> Instagram </Brand>
       </div>
       {/* input / search fild to filter results */}
       <form onSubmit={props.submitSearch}>
@@ -22,15 +47,15 @@ const SearchBar = props => {
         />
       </form>
       {/* likes and loggin icons */}
-      <div className="right-sect-nav d-flex">
+      <NavItem>
         <span className="greet-user">
           Welcome {localStorage.getItem("user")}!
         </span>
         <i className="far fa-lg fa-compass" />
         <i className="far fa-lg fa-heart" />
         <i className="fas fa-lg fa-sign-out-alt" onClick={props.login} />
-      </div>{" "}
-    </nav>
+      </NavItem>
+    </NavBar>
   );
 };
 
