@@ -9,6 +9,25 @@ const NavBar = styled.nav`
   padding: 10px;
   font-size: 1.3rem;
   background-color: whitesmoke;
+
+  @media only screen and (max-width: 670px) {
+    form {
+      width: 50%;
+    }
+
+    div:last-child {
+      display: none;
+    }
+    i {
+      display: block;
+    }
+  }
+`;
+
+const NavItem = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 `;
 
 const Brand = styled.span`
@@ -17,25 +36,32 @@ const Brand = styled.span`
   border-left: 1px solid gray;
 `;
 
-const NavItem = styled.div`
-  i {
-    padding: 6px 15px;
-    font-size: 1.3rem;
-  }
+const Icons = styled.i`
+  padding: 6px 15px;
+  font-size: 1.3rem;
 `;
 
+const Form = styled.form`
+  width: 30%;
+`;
+
+const MobileIcon = styled.i`
+  display: none;
+  padding: 6px 15px;
+  font-size: 1.5rem;
+`;
 // End of JS styles
 
 const SearchBar = props => {
   return (
     <NavBar>
       {/* branding container */}
-      <div>
+      <NavItem>
         <i className="fab fa-lg fa-instagram" />
         <Brand> Instagram </Brand>
-      </div>
+      </NavItem>
       {/* input / search fild to filter results */}
-      <form onSubmit={props.submitSearch}>
+      <Form onSubmit={props.submitSearch}>
         <input
           placeholder="Search by User Name"
           className="form-control"
@@ -45,15 +71,14 @@ const SearchBar = props => {
           name="searchTerm"
           required
         />
-      </form>
+      </Form>
       {/* likes and loggin icons */}
+      <MobileIcon className="fas fa-lg fa-sign-out-alt" />
       <NavItem>
-        <span className="greet-user">
-          Welcome {localStorage.getItem("user")}!
-        </span>
-        <i className="far fa-lg fa-compass" />
-        <i className="far fa-lg fa-heart" />
-        <i className="fas fa-lg fa-sign-out-alt" onClick={props.login} />
+        <span>Welcome {localStorage.getItem("user")}!</span>
+        <Icons className="far fa-lg fa-compass" />
+        <Icons className="far fa-lg fa-heart" />
+        <Icons className="fas fa-lg fa-sign-out-alt" onClick={props.login} />
       </NavItem>
     </NavBar>
   );
