@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 // JS styles
-const NavBar = styled.nav`
+const Header = styled.nav`
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -30,7 +30,7 @@ const NavItem = styled.div`
   align-items: center;
 `;
 
-const Brand = styled.span`
+const LogoHeader = styled.span`
   margin-left: 10px;
   padding-left: 10px;
   border-left: 1px solid gray;
@@ -54,11 +54,11 @@ const MobileIcon = styled.i`
 
 const SearchBar = props => {
   return (
-    <NavBar>
+    <Header>
       {/* branding container */}
       <NavItem>
         <i className="fab fa-lg fa-instagram" />
-        <Brand> Instagram </Brand>
+        <LogoHeader> Instagram </LogoHeader>
       </NavItem>
       {/* input / search fild to filter results */}
       <Form onSubmit={props.submitSearch}>
@@ -73,14 +73,14 @@ const SearchBar = props => {
         />
       </Form>
       {/* likes and loggin icons */}
-      <MobileIcon className="fas fa-lg fa-sign-out-alt" />
+      <MobileIcon className="far fa-lg fa-user" />
       <NavItem>
         <span>Welcome {localStorage.getItem("user")}!</span>
         <Icons className="far fa-lg fa-compass" />
         <Icons className="far fa-lg fa-heart" />
-        <Icons className="fas fa-lg fa-sign-out-alt" onClick={props.login} />
+        <Icons className="far fa-lg fa-user" onClick={props.login} />
       </NavItem>
-    </NavBar>
+    </Header>
   );
 };
 

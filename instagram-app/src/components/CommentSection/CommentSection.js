@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./CommentSection.css";
+import UserAndComment from "../Styles/Reusables/UserAndComment";
 
 class CommentSection extends React.Component {
   state = {
@@ -45,7 +46,7 @@ class CommentSection extends React.Component {
         {this.state.comments.map(comment => (
           <div key={comment.text}>
             <p>
-              <strong>{comment.username} </strong>
+              <UserAndComment type="light">{comment.username} </UserAndComment>
               {comment.text}
             </p>
           </div>
