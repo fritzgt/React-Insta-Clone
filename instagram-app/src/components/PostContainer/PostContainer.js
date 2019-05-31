@@ -5,7 +5,7 @@ import "./PostContainer.css";
 import styled from "styled-components";
 import UserAndComment from "../Styles/Reusables/UserAndComment";
 
-// JS styles
+// CSS/JS styles
 
 const PostCont = styled.div`
   max-width: 700px;
@@ -40,7 +40,7 @@ const Icons = styled.i`
   }
 `;
 
-// End of JS styles
+// End of CSS/JS styles
 
 const PostContainer = props => {
   return (

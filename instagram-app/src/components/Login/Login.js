@@ -1,5 +1,20 @@
 import React from "react";
-import "./Login.css";
+// import "./Login.css";
+import styled from "styled-components";
+
+// CSS/JS styles
+const LogInCont = styled.div`
+  padding-top: 300px;
+`;
+
+const LogInBrand = styled.div`
+  position: absolute;
+  left: 15px;
+  top: 8px;
+  font-size: 1.2rem;
+`;
+
+// End of CSS/JS styles
 
 class Login extends React.Component {
   constructor() {
@@ -43,12 +58,11 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="login-container">
-        <div className="navbar-brand login-brand" href="#">
+      <LogInCont>
+        <LogInBrand>
           <i className="fab fa-lg fa-instagram" />
-          <span className="brand"> Instagram </span>
-        </div>
-
+          <span> Instagram </span>
+        </LogInBrand>
         <form onSubmit={this.login}>
           <input
             placeholder="User Name"
@@ -68,7 +82,7 @@ class Login extends React.Component {
           />
           <button> Login </button>
         </form>
-      </div>
+      </LogInCont>
     );
   }
 }

@@ -4,13 +4,13 @@ import PropTypes from "prop-types";
 import UserAndComment from "../Styles/Reusables/UserAndComment";
 import styled from "styled-components";
 
-// JS styles
+// CSS/JS styles
 const CommentSec = styled.div`
   text-align: left;
   margin-top: 20px;
   padding: 0 5px;
 `;
-// End of JS styles
+// End of CSS/JS styles
 
 class CommentSection extends React.Component {
   state = {
