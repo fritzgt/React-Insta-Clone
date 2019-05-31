@@ -28,15 +28,15 @@ const ThumbNail = styled.img`
 `;
 
 const LikesCont = styled.div`
-  margin: 20px 0;
-  font-size: 1.3rem;
+  margin: 20px 5px;
+  font-size: 1.1rem;
 `;
 
 const Icons = styled.i`
   padding-right: 15px;
 
   :hover {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 `;
 

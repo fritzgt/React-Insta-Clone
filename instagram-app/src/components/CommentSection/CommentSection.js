@@ -1,7 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./CommentSection.css";
+// import "./CommentSection.css";
 import UserAndComment from "../Styles/Reusables/UserAndComment";
+import styled from "styled-components";
+
+// JS styles
+const CommentSec = styled.div`
+  text-align: left;
+  margin-top: 20px;
+  padding: 0 5px;
+`;
+// End of JS styles
 
 class CommentSection extends React.Component {
   state = {
@@ -41,7 +50,7 @@ class CommentSection extends React.Component {
 
   render() {
     return (
-      <div className="comment-secction">
+      <CommentSec>
         {/* mapping over the comments array */}
         {this.state.comments.map(comment => (
           <div key={comment.text}>
@@ -63,7 +72,7 @@ class CommentSection extends React.Component {
             required
           />
         </form>
-      </div>
+      </CommentSec>
     );
   }
 }
