@@ -8,14 +8,23 @@ class PostsPage extends React.Component {
     super();
     this.state = {
       dummyData: [],
-      searchTerm: ""
+      searchTerm: "",
+      loggedIn: false
     };
   }
 
+  //loggedIn not updating state as expected
   componentDidMount() {
     this.setState({
       dummyData: dummyData
     });
+
+    // console.log("loggedIn: " + this.state.loggedIn);
+    // if (localStorage.getItem("user")) {
+    //   this.setState({ loggedIn: true });
+    // } else {
+    //   this.setState({ loggedIn: false });
+    // }
   }
 
   incrementLikes = event => {
@@ -44,7 +53,7 @@ class PostsPage extends React.Component {
 
   //handler for search
   handleSearch = term => {
-    // console.log(term.target.value);
+    console.log(term.target.value);
     this.setState({
       searchTerm: term.target.value
     });
@@ -63,6 +72,17 @@ class PostsPage extends React.Component {
     });
   };
 
+  logOut = e => {
+    // e.preventDefault();
+    window.location.reload();
+    // console.log(e);
+    if (localStorage.getItem("user")) {
+      localStorage.removeItem("user");
+      localStorage.removeItem("password");
+      this.setState({ loggedIn: false });
+    }
+  };
+
   render() {
     return (
       <div className="App">
@@ -71,6 +91,7 @@ class PostsPage extends React.Component {
             submitSearch={this.submitSearch}
             handleSearch={this.handleSearch}
             searchTerm={this.state.searchTerm}
+            login={this.logOut}
           />
         </header>
         <PostContainer
